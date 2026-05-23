@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.windburst.helper</string>
+    <string>de.enl1qhtnd.windburst.helper</string>
     <key>AssociatedBundleIdentifiers</key>
     <array>
-        <string>com.windburst.app</string>
+        <string>de.enl1qhtnd.windburst</string>
     </array>
     <key>MachServices</key>
     <dict>
-        <key>com.windburst.helper</key>
+        <key>de.enl1qhtnd.windburst.helper</key>
         <true/>
     </dict>
     <key>BundleProgram</key>

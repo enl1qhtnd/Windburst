@@ -464,7 +464,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PLIST_DIR=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}/Contents/Library/LaunchDaemons\"\nmkdir -p \"${PLIST_DIR}\"\ncp \"${SRCROOT}/Windburst/Resources/com.windburst.helper.plist\" \"${PLIST_DIR}/\"\n";
+			shellScript = "PLIST_DIR=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}/Contents/Library/LaunchDaemons\"\nmkdir -p \"${PLIST_DIR}\"\ncp \"${SRCROOT}/Windburst/Resources/de.enl1qhtnd.windburst.helper.plist\" \"${PLIST_DIR}/\"\n";
 		};
 		985ED0B621CB01B9CD322D15 /* Embed Helper in MacOS */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -705,7 +705,7 @@
 				INFOPLIST_FILE = Windburst/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-framework IOKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.app;
+				PRODUCT_BUNDLE_IDENTIFIER = de.enl1qhtnd.windburst;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -722,7 +722,7 @@
 					"@executable_path/../Frameworks",
 				);
 				OTHER_LDFLAGS = "-framework IOKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.helper;
+				PRODUCT_BUNDLE_IDENTIFIER = de.enl1qhtnd.windburst.helper;
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 			};
@@ -738,7 +738,7 @@
 				INFOPLIST_FILE = Windburst/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				OTHER_LDFLAGS = "-framework IOKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.app;
+				PRODUCT_BUNDLE_IDENTIFIER = de.enl1qhtnd.windburst;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -759,7 +759,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.shared;
+				PRODUCT_BUNDLE_IDENTIFIER = de.enl1qhtnd.windburst.shared;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -782,7 +782,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.shared;
+				PRODUCT_BUNDLE_IDENTIFIER = de.enl1qhtnd.windburst.shared;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -801,7 +801,7 @@
 					"@executable_path/../Frameworks",
 				);
 				OTHER_LDFLAGS = "-framework IOKit";
-				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.helper;
+				PRODUCT_BUNDLE_IDENTIFIER = de.enl1qhtnd.windburst.helper;
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 			};

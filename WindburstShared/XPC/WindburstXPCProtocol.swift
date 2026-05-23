@@ -21,10 +21,10 @@ import Foundation
 }
 
 public enum WindburstXPCConstants {
-    public static let machServiceName = "com.windburst.helper"
-    public static let helperBundleIdentifier = "com.windburst.helper"
-    public static let appBundleIdentifier = "com.windburst.app"
-    public static let helperLabel = "com.windburst.helper"
+    public static let machServiceName = "de.enl1qhtnd.windburst.helper"
+    public static let helperBundleIdentifier = "de.enl1qhtnd.windburst.helper"
+    public static let appBundleIdentifier = "de.enl1qhtnd.windburst"
+    public static let helperLabel = "de.enl1qhtnd.windburst.helper"
 }
 
 public enum XPCCodec {

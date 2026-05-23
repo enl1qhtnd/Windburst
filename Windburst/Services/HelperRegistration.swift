@@ -40,8 +40,8 @@ enum HelperRegistrationStatus: Equatable {
 }
 
 enum HelperRegistration {
-    private static let plistName = "com.windburst.helper.plist"
-    private static let launchDaemonPath = "/Library/LaunchDaemons/com.windburst.helper.plist"
+    private static let plistName = "de.enl1qhtnd.windburst.helper.plist"
+    private static let launchDaemonPath = "/Library/LaunchDaemons/de.enl1qhtnd.windburst.helper.plist"
 
     static func bundledHelperURL() -> URL? {
         if let url = Bundle.main.url(forAuxiliaryExecutable: "WindburstHelper") {
@@ -186,7 +186,7 @@ enum HelperRegistration {
 
         let plistBody = manualLaunchDaemonPlist(helperPath: helperURL.path)
         let tempPlist = FileManager.default.temporaryDirectory
-            .appendingPathComponent("com.windburst.helper.install.plist")
+            .appendingPathComponent("de.enl1qhtnd.windburst.helper.install.plist")
         do {
             try plistBody.write(to: tempPlist, atomically: true, encoding: .utf8)
         } catch {

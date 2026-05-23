@@ -11,7 +11,7 @@ final class CurveLoop {
 
     private var activeCurves: [UUID: ActiveCurve] = [:]
     private var timer: DispatchSourceTimer?
-    private let queue = DispatchQueue(label: "com.windburst.curveloop", qos: .userInitiated)
+    private let queue = DispatchQueue(label: "de.enl1qhtnd.windburst.curveloop", qos: .userInitiated)
     private let lock = NSLock()
 
     var activeTargets: [Int: Int] {
