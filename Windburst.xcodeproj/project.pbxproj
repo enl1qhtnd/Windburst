@@ -1,0 +1,852 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17D9B5819B51980FD2F9DA52 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24909E96283D8DDF94EBCB3 /* AppSettings.swift */; };
+		19662C4FE5D82A414CB29754 /* LaunchAtLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72C52F7CF1EA937F75DDE1E /* LaunchAtLoginManager.swift */; };
+		1991149C49C3626336755E73 /* HelperService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44012C9F901DF0C8B80419BE /* HelperService.swift */; };
+		1B212D21A6641AA5EA9B50E6 /* FanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793706FBB49F74575B193D01 /* FanDetailView.swift */; };
+		1DA15C2874791EACF1437433 /* WindburstApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78B8A5233DB9D0452EB8E09 /* WindburstApp.swift */; };
+		1ECE6E8133D9D9B3169CF498 /* FanControlBackend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4F956833FF9EA2000A4F53 /* FanControlBackend.swift */; };
+		24A815B33FAFFAC59F215E19 /* SparklineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C8EF98AB1FEFEDC1829ACB /* SparklineView.swift */; };
+		2CA2E93D1C597B0A428158D3 /* FanCurveInterpolator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC70CF3B456BE38B637EF85 /* FanCurveInterpolator.swift */; };
+		2CD5A17935F4F1DAC9A1A2FE /* WindburstShared.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 992208518A113AA94FE4054D /* WindburstShared.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2FFCCA67BFD48884333855CA /* SMCKeyCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987CCC389D5F3E2D6CDD3EF7 /* SMCKeyCatalog.swift */; };
+		330B448BA4170B229228D733 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D328BE40E9673F520230535 /* SettingsView.swift */; };
+		3AE917D44E9F48CFB666482B /* HelperRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC927BAEF407BB5D4B5863E3 /* HelperRegistration.swift */; };
+		3BFDD5AA4E4BC900C7069FB9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3F0579B42B7BE006EC8E0 /* main.swift */; };
+		3FA9BB056E7DF80916F791A8 /* Sensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 186534ECB85226C655A664C8 /* Sensor.swift */; };
+		481F27AE153E84667211EA92 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F91DC6E27F203B00DDFB65 /* AlertManager.swift */; };
+		54E33B3AABF7C1B21859764C /* Fan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1C3CA54D85A04216330471 /* Fan.swift */; };
+		55F81562AADCA522E29CE8BF /* PresetTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10998C970946D6C512BA18F0 /* PresetTheme.swift */; };
+		56CA84C63B68D75832EE5CE2 /* WindburstShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992208518A113AA94FE4054D /* WindburstShared.framework */; };
+		573D234F054E1DF423F0ADD1 /* SMCDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F024A1FE41A0CA818B1FAB /* SMCDriver.swift */; };
+		580EF17977D8CD2B6BB8E576 /* PopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E01E3623072FB780FFCA2C /* PopoverView.swift */; };
+		648CE9B0CC8C9C18039EF385 /* SMCValueParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE284959431F1094C0C41B /* SMCValueParser.swift */; };
+		6C7902D1D84A7C7EA2BC83E1 /* FanPreferencesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD75C77FD277ECA2FB3F52D /* FanPreferencesStore.swift */; };
+		7AC6603BF1944B311601FC28 /* LiquidctlClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1171D2FB239447D3211AEC /* LiquidctlClient.swift */; };
+		7DDBA83C169AC2F05ABD84C6 /* RingBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3336C8DA9373D4DBA6DDD /* RingBuffer.swift */; };
+		8BC1536B141F52BEF50AFD16 /* AppIcon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 0878E72B01E594734E1862DD /* AppIcon.icns */; };
+		923EDABD1A3E2A3F4DCC6251 /* HelperClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B8486987517887F068354F /* HelperClient.swift */; };
+		952C941888A419B28B941002 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB85AE8964C1E38C6BDEF53 /* AppState.swift */; };
+		A5213328542A5DFCF6773B2E /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F7D71C856CE415BDE93F7B /* SettingsStore.swift */; };
+		A697AAEA4CB58A9A7AEFACCD /* FanPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD2B17E5FE1F5D908E8ACAF7 /* FanPreset.swift */; };
+		A76A63E326DCC5947613965F /* WindburstXPCProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624392C687A9C2E23B140CB3 /* WindburstXPCProtocol.swift */; };
+		A999DCFB0776F524F84396A2 /* WindburstShared.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 992208518A113AA94FE4054D /* WindburstShared.framework */; };
+		B49D020FE5DB1E90392C794F /* FanSettingsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C5CC289A195674FA6A73392 /* FanSettingsRow.swift */; };
+		B79EBD743EB530FD37F38E39 /* SensorDebugView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1603B394A597540B3CD43CA8 /* SensorDebugView.swift */; };
+		BA679D49671B21C6486FBA38 /* LiquidctlCurveLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEB03A80E9B823148942DCC /* LiquidctlCurveLoop.swift */; };
+		C5BD679FC714309985657FDB /* MonitorEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EA90065FAD2E74C159701D /* MonitorEngine.swift */; };
+		C8B1AFD17AAA75FA931F5E03 /* CurveEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1363B0E20BE87607DC6375F6 /* CurveEngine.swift */; };
+		CE1A6A777579DE56F7B3D4BB /* CurveLoop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9951B39B0B10C6EFB0B9DA65 /* CurveLoop.swift */; };
+		D05351206F36D0DC9D50CD27 /* FanCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD804CC7FA1FC15FFED68416 /* FanCurve.swift */; };
+		D7FC7AADBD7AE5108AD9E135 /* MetricChartScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2214AC2A56176E1D3005C831 /* MetricChartScale.swift */; };
+		D828BE41BF56B6D961079C4B /* CurveEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE3CDDF0E97C206605F5441 /* CurveEditorView.swift */; };
+		D92272E8E567440F47582167 /* FanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E59E28F1983FC9BC408AFF7 /* FanController.swift */; };
+		EA4565788BEE8090EC3FDC2E /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9739B6D7518A96801551E90C /* StatusBarController.swift */; };
+		FA6FECA03301CBF76F1679A3 /* FanPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4240C5C0D6309AE8F2ABEDC /* FanPreferences.swift */; };
+		FFF5C38EC9F8D05C2065F7B1 /* SMCConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71352E616363ECAEAE545C7F /* SMCConnection.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		172C8D0E53C12D4F357BBDE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6847DF323A8ACF61AB8FE619 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DA6FA115754B804983F7A2C;
+			remoteInfo = WindburstHelper;
+		};
+		A0FE9A662F68E396D39CD2B2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6847DF323A8ACF61AB8FE619 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 866A1EE9E8689BB409CAE568;
+			remoteInfo = WindburstShared;
+		};
+		F0AA9769ED590953508532B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6847DF323A8ACF61AB8FE619 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 866A1EE9E8689BB409CAE568;
+			remoteInfo = WindburstShared;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1C743ACEC2DD4509977CAE90 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2CD5A17935F4F1DAC9A1A2FE /* WindburstShared.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0878E72B01E594734E1862DD /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
+		0A1171D2FB239447D3211AEC /* LiquidctlClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidctlClient.swift; sourceTree = "<group>"; };
+		0CE3CDDF0E97C206605F5441 /* CurveEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveEditorView.swift; sourceTree = "<group>"; };
+		0FB85AE8964C1E38C6BDEF53 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		10998C970946D6C512BA18F0 /* PresetTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetTheme.swift; sourceTree = "<group>"; };
+		1363B0E20BE87607DC6375F6 /* CurveEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveEngine.swift; sourceTree = "<group>"; };
+		1603B394A597540B3CD43CA8 /* SensorDebugView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDebugView.swift; sourceTree = "<group>"; };
+		186534ECB85226C655A664C8 /* Sensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sensor.swift; sourceTree = "<group>"; };
+		1C5CC289A195674FA6A73392 /* FanSettingsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanSettingsRow.swift; sourceTree = "<group>"; };
+		1D328BE40E9673F520230535 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2214AC2A56176E1D3005C831 /* MetricChartScale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricChartScale.swift; sourceTree = "<group>"; };
+		2DEB03A80E9B823148942DCC /* LiquidctlCurveLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiquidctlCurveLoop.swift; sourceTree = "<group>"; };
+		34F7D71C856CE415BDE93F7B /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		37F91DC6E27F203B00DDFB65 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		3AC70CF3B456BE38B637EF85 /* FanCurveInterpolator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanCurveInterpolator.swift; sourceTree = "<group>"; };
+		3B4F956833FF9EA2000A4F53 /* FanControlBackend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanControlBackend.swift; sourceTree = "<group>"; };
+		41F024A1FE41A0CA818B1FAB /* SMCDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCDriver.swift; sourceTree = "<group>"; };
+		42EA90065FAD2E74C159701D /* MonitorEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonitorEngine.swift; sourceTree = "<group>"; };
+		44012C9F901DF0C8B80419BE /* HelperService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperService.swift; sourceTree = "<group>"; };
+		4D1C3CA54D85A04216330471 /* Fan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fan.swift; sourceTree = "<group>"; };
+		4E59E28F1983FC9BC408AFF7 /* FanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanController.swift; sourceTree = "<group>"; };
+		4FD3336C8DA9373D4DBA6DDD /* RingBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingBuffer.swift; sourceTree = "<group>"; };
+		624392C687A9C2E23B140CB3 /* WindburstXPCProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindburstXPCProtocol.swift; sourceTree = "<group>"; };
+		68C8EF98AB1FEFEDC1829ACB /* SparklineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SparklineView.swift; sourceTree = "<group>"; };
+		6AD75C77FD277ECA2FB3F52D /* FanPreferencesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanPreferencesStore.swift; sourceTree = "<group>"; };
+		71352E616363ECAEAE545C7F /* SMCConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCConnection.swift; sourceTree = "<group>"; };
+		793706FBB49F74575B193D01 /* FanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanDetailView.swift; sourceTree = "<group>"; };
+		9739B6D7518A96801551E90C /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		987CCC389D5F3E2D6CDD3EF7 /* SMCKeyCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCKeyCatalog.swift; sourceTree = "<group>"; };
+		992208518A113AA94FE4054D /* WindburstShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WindburstShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9951B39B0B10C6EFB0B9DA65 /* CurveLoop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurveLoop.swift; sourceTree = "<group>"; };
+		B78B8A5233DB9D0452EB8E09 /* WindburstApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindburstApp.swift; sourceTree = "<group>"; };
+		BD2B17E5FE1F5D908E8ACAF7 /* FanPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanPreset.swift; sourceTree = "<group>"; };
+		C72C52F7CF1EA937F75DDE1E /* LaunchAtLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchAtLoginManager.swift; sourceTree = "<group>"; };
+		CD804CC7FA1FC15FFED68416 /* FanCurve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanCurve.swift; sourceTree = "<group>"; };
+		D1D383F41CC163E8BF860C33 /* Windburst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Windburst.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D24909E96283D8DDF94EBCB3 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		E4240C5C0D6309AE8F2ABEDC /* FanPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanPreferences.swift; sourceTree = "<group>"; };
+		E8B8486987517887F068354F /* HelperClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperClient.swift; sourceTree = "<group>"; };
+		EBBE284959431F1094C0C41B /* SMCValueParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMCValueParser.swift; sourceTree = "<group>"; };
+		EDB3F0579B42B7BE006EC8E0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F03BADB32CF2968CEA71B514 /* WindburstHelper */ = {isa = PBXFileReference; includeInIndex = 0; path = WindburstHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5E01E3623072FB780FFCA2C /* PopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverView.swift; sourceTree = "<group>"; };
+		FC927BAEF407BB5D4B5863E3 /* HelperRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperRegistration.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4DDED65ACE445CB9A8F6FC9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A999DCFB0776F524F84396A2 /* WindburstShared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69F64176D159D8803D754FC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56CA84C63B68D75832EE5CE2 /* WindburstShared.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24B1759CF3DE7B6A2953423E = {
+			isa = PBXGroup;
+			children = (
+				B406C3A9409EF78BD33A5B8F /* Windburst */,
+				3E8A8D7A281F2A8281F820EB /* WindburstHelper */,
+				76BDE6AFA606133EA3038870 /* WindburstShared */,
+				A3EFD364FAC3B3C73B35B8CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		25240109880560536443767A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D24909E96283D8DDF94EBCB3 /* AppSettings.swift */,
+				4D1C3CA54D85A04216330471 /* Fan.swift */,
+				3B4F956833FF9EA2000A4F53 /* FanControlBackend.swift */,
+				CD804CC7FA1FC15FFED68416 /* FanCurve.swift */,
+				E4240C5C0D6309AE8F2ABEDC /* FanPreferences.swift */,
+				BD2B17E5FE1F5D908E8ACAF7 /* FanPreset.swift */,
+				186534ECB85226C655A664C8 /* Sensor.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3918BC0601454AA0993EABAF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				10998C970946D6C512BA18F0 /* PresetTheme.swift */,
+				68C8EF98AB1FEFEDC1829ACB /* SparklineView.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3C2932417191A32D79E76D03 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0FB85AE8964C1E38C6BDEF53 /* AppState.swift */,
+				B78B8A5233DB9D0452EB8E09 /* WindburstApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3E22A6C67A04675066C182AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0CE3CDDF0E97C206605F5441 /* CurveEditorView.swift */,
+				793706FBB49F74575B193D01 /* FanDetailView.swift */,
+				1C5CC289A195674FA6A73392 /* FanSettingsRow.swift */,
+				F5E01E3623072FB780FFCA2C /* PopoverView.swift */,
+				1603B394A597540B3CD43CA8 /* SensorDebugView.swift */,
+				1D328BE40E9673F520230535 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3E8A8D7A281F2A8281F820EB /* WindburstHelper */ = {
+			isa = PBXGroup;
+			children = (
+				9951B39B0B10C6EFB0B9DA65 /* CurveLoop.swift */,
+				4E59E28F1983FC9BC408AFF7 /* FanController.swift */,
+				44012C9F901DF0C8B80419BE /* HelperService.swift */,
+				EDB3F0579B42B7BE006EC8E0 /* main.swift */,
+			);
+			path = WindburstHelper;
+			sourceTree = "<group>";
+		};
+		5BA5766DC7C368471C87958B /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				3AC70CF3B456BE38B637EF85 /* FanCurveInterpolator.swift */,
+				2214AC2A56176E1D3005C831 /* MetricChartScale.swift */,
+				4FD3336C8DA9373D4DBA6DDD /* RingBuffer.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		687F0A0E2EED7CBA8EE42144 /* XPC */ = {
+			isa = PBXGroup;
+			children = (
+				624392C687A9C2E23B140CB3 /* WindburstXPCProtocol.swift */,
+			);
+			path = XPC;
+			sourceTree = "<group>";
+		};
+		76BDE6AFA606133EA3038870 /* WindburstShared */ = {
+			isa = PBXGroup;
+			children = (
+				5BA5766DC7C368471C87958B /* Engine */,
+				25240109880560536443767A /* Models */,
+				ED42BE8EA2F2FCBF6AA10B9C /* SMC */,
+				687F0A0E2EED7CBA8EE42144 /* XPC */,
+			);
+			path = WindburstShared;
+			sourceTree = "<group>";
+		};
+		A3EFD364FAC3B3C73B35B8CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D1D383F41CC163E8BF860C33 /* Windburst.app */,
+				F03BADB32CF2968CEA71B514 /* WindburstHelper */,
+				992208518A113AA94FE4054D /* WindburstShared.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A505D8729FA474C4903F4E5E /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				1363B0E20BE87607DC6375F6 /* CurveEngine.swift */,
+				2DEB03A80E9B823148942DCC /* LiquidctlCurveLoop.swift */,
+				42EA90065FAD2E74C159701D /* MonitorEngine.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		B406C3A9409EF78BD33A5B8F /* Windburst */ = {
+			isa = PBXGroup;
+			children = (
+				3C2932417191A32D79E76D03 /* App */,
+				A505D8729FA474C4903F4E5E /* Engine */,
+				CFFCACB436AE43913D31525E /* Resources */,
+				DE12BF6CE82DA17850AE9D57 /* Services */,
+				B49E13B0D7B50B9F1C90499E /* StatusBar */,
+				3918BC0601454AA0993EABAF /* Utilities */,
+				3E22A6C67A04675066C182AB /* Views */,
+			);
+			path = Windburst;
+			sourceTree = "<group>";
+		};
+		B49E13B0D7B50B9F1C90499E /* StatusBar */ = {
+			isa = PBXGroup;
+			children = (
+				9739B6D7518A96801551E90C /* StatusBarController.swift */,
+			);
+			path = StatusBar;
+			sourceTree = "<group>";
+		};
+		CFFCACB436AE43913D31525E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0878E72B01E594734E1862DD /* AppIcon.icns */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE12BF6CE82DA17850AE9D57 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				37F91DC6E27F203B00DDFB65 /* AlertManager.swift */,
+				6AD75C77FD277ECA2FB3F52D /* FanPreferencesStore.swift */,
+				E8B8486987517887F068354F /* HelperClient.swift */,
+				FC927BAEF407BB5D4B5863E3 /* HelperRegistration.swift */,
+				C72C52F7CF1EA937F75DDE1E /* LaunchAtLoginManager.swift */,
+				0A1171D2FB239447D3211AEC /* LiquidctlClient.swift */,
+				34F7D71C856CE415BDE93F7B /* SettingsStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ED42BE8EA2F2FCBF6AA10B9C /* SMC */ = {
+			isa = PBXGroup;
+			children = (
+				71352E616363ECAEAE545C7F /* SMCConnection.swift */,
+				41F024A1FE41A0CA818B1FAB /* SMCDriver.swift */,
+				987CCC389D5F3E2D6CDD3EF7 /* SMCKeyCatalog.swift */,
+				EBBE284959431F1094C0C41B /* SMCValueParser.swift */,
+			);
+			path = SMC;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2DA6FA115754B804983F7A2C /* WindburstHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56BCCDCAE9A4904BE6B37816 /* Build configuration list for PBXNativeTarget "WindburstHelper" */;
+			buildPhases = (
+				CCD5108F814ABA55ED984D5E /* Sources */,
+				69F64176D159D8803D754FC6 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6EA910BAF3C001EAD52E5E05 /* PBXTargetDependency */,
+			);
+			name = WindburstHelper;
+			packageProductDependencies = (
+			);
+			productName = WindburstHelper;
+			productReference = F03BADB32CF2968CEA71B514 /* WindburstHelper */;
+			productType = "com.apple.product-type.tool";
+		};
+		485DD625897112CF7CEB3505 /* Windburst */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FC9DB9DD38139C04FCE59A3F /* Build configuration list for PBXNativeTarget "Windburst" */;
+			buildPhases = (
+				E48E6138D1AFACF805C7E799 /* Sources */,
+				9F93B07E7F8EA47F9AA0C59D /* Resources */,
+				4DDED65ACE445CB9A8F6FC9E /* Frameworks */,
+				1C743ACEC2DD4509977CAE90 /* Embed Frameworks */,
+				3888B64935F51330B9255E77 /* Ensure Helper LaunchDaemon Plist */,
+				985ED0B621CB01B9CD322D15 /* Embed Helper in MacOS */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76155E5711F746514FB2CF30 /* PBXTargetDependency */,
+				211D53ED2D9A4C480FA2AAFD /* PBXTargetDependency */,
+			);
+			name = Windburst;
+			packageProductDependencies = (
+			);
+			productName = Windburst;
+			productReference = D1D383F41CC163E8BF860C33 /* Windburst.app */;
+			productType = "com.apple.product-type.application";
+		};
+		866A1EE9E8689BB409CAE568 /* WindburstShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E1CECCB946DDAB947E5ABDD6 /* Build configuration list for PBXNativeTarget "WindburstShared" */;
+			buildPhases = (
+				096DEC2C9E37F537F09F75B4 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WindburstShared;
+			packageProductDependencies = (
+			);
+			productName = WindburstShared;
+			productReference = 992208518A113AA94FE4054D /* WindburstShared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6847DF323A8ACF61AB8FE619 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2DA6FA115754B804983F7A2C = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					485DD625897112CF7CEB3505 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					866A1EE9E8689BB409CAE568 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DAE12D9A54261ED57D2FBAAC /* Build configuration list for PBXProject "Windburst" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 24B1759CF3DE7B6A2953423E;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = A3EFD364FAC3B3C73B35B8CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				485DD625897112CF7CEB3505 /* Windburst */,
+				2DA6FA115754B804983F7A2C /* WindburstHelper */,
+				866A1EE9E8689BB409CAE568 /* WindburstShared */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F93B07E7F8EA47F9AA0C59D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BC1536B141F52BEF50AFD16 /* AppIcon.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3888B64935F51330B9255E77 /* Ensure Helper LaunchDaemon Plist */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Ensure Helper LaunchDaemon Plist";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "PLIST_DIR=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}/Contents/Library/LaunchDaemons\"\nmkdir -p \"${PLIST_DIR}\"\ncp \"${SRCROOT}/Windburst/Resources/com.windburst.helper.plist\" \"${PLIST_DIR}/\"\n";
+		};
+		985ED0B621CB01B9CD322D15 /* Embed Helper in MacOS */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Helper in MacOS";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\nHELPER_SRC=\"${BUILT_PRODUCTS_DIR}/WindburstHelper\"\nDEST=\"${APP}/Contents/MacOS/WindburstHelper\"\nmkdir -p \"${APP}/Contents/MacOS\"\ncp \"${HELPER_SRC}\" \"${DEST}\"\nchmod +x \"${DEST}\"\nrm -f \"${APP}/Contents/Resources/WindburstHelper\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		096DEC2C9E37F537F09F75B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17D9B5819B51980FD2F9DA52 /* AppSettings.swift in Sources */,
+				54E33B3AABF7C1B21859764C /* Fan.swift in Sources */,
+				1ECE6E8133D9D9B3169CF498 /* FanControlBackend.swift in Sources */,
+				D05351206F36D0DC9D50CD27 /* FanCurve.swift in Sources */,
+				2CA2E93D1C597B0A428158D3 /* FanCurveInterpolator.swift in Sources */,
+				FA6FECA03301CBF76F1679A3 /* FanPreferences.swift in Sources */,
+				A697AAEA4CB58A9A7AEFACCD /* FanPreset.swift in Sources */,
+				D7FC7AADBD7AE5108AD9E135 /* MetricChartScale.swift in Sources */,
+				7DDBA83C169AC2F05ABD84C6 /* RingBuffer.swift in Sources */,
+				FFF5C38EC9F8D05C2065F7B1 /* SMCConnection.swift in Sources */,
+				573D234F054E1DF423F0ADD1 /* SMCDriver.swift in Sources */,
+				2FFCCA67BFD48884333855CA /* SMCKeyCatalog.swift in Sources */,
+				648CE9B0CC8C9C18039EF385 /* SMCValueParser.swift in Sources */,
+				3FA9BB056E7DF80916F791A8 /* Sensor.swift in Sources */,
+				A76A63E326DCC5947613965F /* WindburstXPCProtocol.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCD5108F814ABA55ED984D5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1A6A777579DE56F7B3D4BB /* CurveLoop.swift in Sources */,
+				D92272E8E567440F47582167 /* FanController.swift in Sources */,
+				1991149C49C3626336755E73 /* HelperService.swift in Sources */,
+				3BFDD5AA4E4BC900C7069FB9 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E48E6138D1AFACF805C7E799 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481F27AE153E84667211EA92 /* AlertManager.swift in Sources */,
+				952C941888A419B28B941002 /* AppState.swift in Sources */,
+				D828BE41BF56B6D961079C4B /* CurveEditorView.swift in Sources */,
+				C8B1AFD17AAA75FA931F5E03 /* CurveEngine.swift in Sources */,
+				1B212D21A6641AA5EA9B50E6 /* FanDetailView.swift in Sources */,
+				6C7902D1D84A7C7EA2BC83E1 /* FanPreferencesStore.swift in Sources */,
+				B49D020FE5DB1E90392C794F /* FanSettingsRow.swift in Sources */,
+				923EDABD1A3E2A3F4DCC6251 /* HelperClient.swift in Sources */,
+				3AE917D44E9F48CFB666482B /* HelperRegistration.swift in Sources */,
+				19662C4FE5D82A414CB29754 /* LaunchAtLoginManager.swift in Sources */,
+				7AC6603BF1944B311601FC28 /* LiquidctlClient.swift in Sources */,
+				BA679D49671B21C6486FBA38 /* LiquidctlCurveLoop.swift in Sources */,
+				C5BD679FC714309985657FDB /* MonitorEngine.swift in Sources */,
+				580EF17977D8CD2B6BB8E576 /* PopoverView.swift in Sources */,
+				55F81562AADCA522E29CE8BF /* PresetTheme.swift in Sources */,
+				B79EBD743EB530FD37F38E39 /* SensorDebugView.swift in Sources */,
+				A5213328542A5DFCF6773B2E /* SettingsStore.swift in Sources */,
+				330B448BA4170B229228D733 /* SettingsView.swift in Sources */,
+				24A815B33FAFFAC59F215E19 /* SparklineView.swift in Sources */,
+				EA4565788BEE8090EC3FDC2E /* StatusBarController.swift in Sources */,
+				1DA15C2874791EACF1437433 /* WindburstApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		211D53ED2D9A4C480FA2AAFD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DA6FA115754B804983F7A2C /* WindburstHelper */;
+			targetProxy = 172C8D0E53C12D4F357BBDE3 /* PBXContainerItemProxy */;
+		};
+		6EA910BAF3C001EAD52E5E05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 866A1EE9E8689BB409CAE568 /* WindburstShared */;
+			targetProxy = A0FE9A662F68E396D39CD2B2 /* PBXContainerItemProxy */;
+		};
+		76155E5711F746514FB2CF30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 866A1EE9E8689BB409CAE568 /* WindburstShared */;
+			targetProxy = F0AA9769ED590953508532B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2DF013FCD30BE1C69463BEA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		36C7987835955E690D4B6F93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		545D020A8F9A649D9BD060F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = Windburst/Resources/Windburst.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Windburst/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-framework IOKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.app;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6F65D9D2700ACC0048D41D62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WindburstHelper/Resources/WindburstHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WindburstHelper/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "-framework IOKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.helper;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+			};
+			name = Debug;
+		};
+		70B49ED6B9D102D6BB1AA830 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_ENTITLEMENTS = Windburst/Resources/Windburst.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Windburst/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				OTHER_LDFLAGS = "-framework IOKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.app;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		810183A22E1527237209B4D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.shared;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		8BCF9AA777F6699AF1F5E64F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.shared;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		EDB962EA1F8156FD72DA3170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WindburstHelper/Resources/WindburstHelper.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = WindburstHelper/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				OTHER_LDFLAGS = "-framework IOKit";
+				PRODUCT_BUNDLE_IDENTIFIER = com.windburst.helper;
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		56BCCDCAE9A4904BE6B37816 /* Build configuration list for PBXNativeTarget "WindburstHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F65D9D2700ACC0048D41D62 /* Debug */,
+				EDB962EA1F8156FD72DA3170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DAE12D9A54261ED57D2FBAAC /* Build configuration list for PBXProject "Windburst" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36C7987835955E690D4B6F93 /* Debug */,
+				2DF013FCD30BE1C69463BEA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E1CECCB946DDAB947E5ABDD6 /* Build configuration list for PBXNativeTarget "WindburstShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8BCF9AA777F6699AF1F5E64F /* Debug */,
+				810183A22E1527237209B4D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FC9DB9DD38139C04FCE59A3F /* Build configuration list for PBXNativeTarget "Windburst" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				545D020A8F9A649D9BD060F2 /* Debug */,
+				70B49ED6B9D102D6BB1AA830 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6847DF323A8ACF61AB8FE619 /* Project object */;
+}

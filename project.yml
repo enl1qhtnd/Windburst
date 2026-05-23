@@ -1,0 +1,108 @@
+name: Windburst
+options:
+  bundleIdPrefix: com.windburst
+  deploymentTarget:
+    macOS: "13.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "13.0"
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_IDENTITY: "-"
+
+targets:
+  WindburstShared:
+    type: framework
+    platform: macOS
+    sources:
+      - path: WindburstShared
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.windburst.shared
+      GENERATE_INFOPLIST_FILE: YES
+      DEFINES_MODULE: YES
+
+  WindburstHelper:
+    type: tool
+    platform: macOS
+    sources:
+      - path: WindburstHelper
+        excludes:
+          - Resources
+    resources:
+      - path: WindburstHelper/Resources
+    dependencies:
+      - target: WindburstShared
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.windburst.helper
+      GENERATE_INFOPLIST_FILE: NO
+      INFOPLIST_FILE: WindburstHelper/Resources/Info.plist
+      CODE_SIGN_ENTITLEMENTS: WindburstHelper/Resources/WindburstHelper.entitlements
+      SKIP_INSTALL: NO
+      OTHER_LDFLAGS: "-framework IOKit"
+
+  Windburst:
+    type: application
+    platform: macOS
+    sources:
+      - path: Windburst
+        excludes:
+          - Resources
+      - path: Windburst/Resources/AppIcon.icns
+        buildPhase: resources
+    resources:
+      - path: Windburst/Resources
+        excludes:
+          - com.windburst.helper.plist
+          - AppIcon.iconset
+          - Info.plist
+          - Windburst.entitlements
+    copyFiles:
+      - destination: wrapper
+        subpath: Library/LaunchDaemons
+        files:
+          - path: Windburst/Resources/com.windburst.helper.plist
+    postBuildScripts:
+      - name: Ensure Helper LaunchDaemon Plist
+        script: |
+          PLIST_DIR="${TARGET_BUILD_DIR}/${WRAPPER_NAME}/Contents/Library/LaunchDaemons"
+          mkdir -p "${PLIST_DIR}"
+          cp "${SRCROOT}/Windburst/Resources/com.windburst.helper.plist" "${PLIST_DIR}/"
+        basedOnDependencyAnalysis: false
+      - name: Embed Helper in MacOS
+        script: |
+          APP="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
+          HELPER_SRC="${BUILT_PRODUCTS_DIR}/WindburstHelper"
+          DEST="${APP}/Contents/MacOS/WindburstHelper"
+          mkdir -p "${APP}/Contents/MacOS"
+          cp "${HELPER_SRC}" "${DEST}"
+          chmod +x "${DEST}"
+          rm -f "${APP}/Contents/Resources/WindburstHelper"
+        basedOnDependencyAnalysis: false
+    dependencies:
+      - target: WindburstShared
+        embed: true
+      - target: WindburstHelper
+        embed: false
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.windburst.app
+      GENERATE_INFOPLIST_FILE: NO
+      INFOPLIST_FILE: Windburst/Resources/Info.plist
+      CODE_SIGN_ENTITLEMENTS: Windburst/Resources/Windburst.entitlements
+      ASSETCATALOG_COMPILER_APPICON_NAME: ""
+      OTHER_LDFLAGS: "-framework IOKit"
+      LD_RUNPATH_SEARCH_PATHS: "$(inherited) @executable_path/../Frameworks"
+
+schemes:
+  Windburst:
+    build:
+      targets:
+        Windburst: all
+        WindburstHelper: all
+        WindburstShared: all
+    run:
+      config: Debug
+      target: Windburst
