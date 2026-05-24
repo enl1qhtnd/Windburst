@@ -29,7 +29,16 @@ final class CurveLoop {
 
     func start(config: CurveConfiguration, driver: SMCDriver, fanController: FanController) throws {
         lock.lock()
-        activeCurves[config.curve.id] = ActiveCurve(config: config)
+        detachFans(config.fanIndices, exceptCurveID: config.curve.id)
+
+        if let existing = activeCurves[config.curve.id] {
+            var mergedConfig = config
+            let mergedIndices = Set(existing.config.fanIndices + config.fanIndices)
+            mergedConfig.fanIndices = Array(mergedIndices).sorted()
+            activeCurves[config.curve.id] = ActiveCurve(config: mergedConfig)
+        } else {
+            activeCurves[config.curve.id] = ActiveCurve(config: config)
+        }
         lock.unlock()
 
         startTimerIfNeeded(driver: driver, fanController: fanController)
@@ -67,6 +76,22 @@ final class CurveLoop {
         timer = nil
     }
 
+    private func detachFans(_ fanIndices: [Int], exceptCurveID: UUID) {
+        for fanIndex in fanIndices {
+            for (id, var curve) in activeCurves where id != exceptCurveID {
+                guard curve.config.fanIndices.contains(fanIndex) else { continue }
+                curve.config.fanIndices.removeAll { $0 == fanIndex }
+                curve.lastAppliedRPM.removeValue(forKey: fanIndex)
+                curve.lastChangeDate.removeValue(forKey: fanIndex)
+                if curve.config.fanIndices.isEmpty {
+                    activeCurves.removeValue(forKey: id)
+                } else {
+                    activeCurves[id] = curve
+                }
+            }
+        }
+    }
+
     private func startTimerIfNeeded(driver: SMCDriver, fanController: FanController) {
         guard timer == nil else { return }
 
@@ -88,16 +113,17 @@ final class CurveLoop {
 
         for (id, var active) in curves {
             let config = active.config
-
-            guard let temperature = try? driver.readTemperature(key: config.sensorKey) else {
+            let temperature = try? driver.readTemperature(key: config.sensorKey)
+            if temperature == nil && !config.curve.isFixedMaxSpeed {
                 continue
             }
+            let resolvedTemperature = temperature ?? 0
 
             for fanIndex in config.fanIndices {
                 let minRPM = config.fanMinRPM[fanIndex] ?? 800
                 let maxRPM = config.fanMaxRPM[fanIndex] ?? 6000
                 let targetRPM = CurveEngine.rpmForTemperature(
-                    temperature,
+                    resolvedTemperature,
                     curve: config.curve,
                     minRPM: minRPM,
                     maxRPM: maxRPM,

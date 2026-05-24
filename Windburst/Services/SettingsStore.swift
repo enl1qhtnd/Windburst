@@ -101,7 +101,12 @@ final class PresetStore: ObservableObject {
     private static func mergePresets(_ saved: [FanPreset]) -> [FanPreset] {
         var byID = Dictionary(uniqueKeysWithValues: FanPreset.builtInPresets.map { ($0.id, $0) })
         for preset in saved {
-            byID[preset.id] = preset
+            if preset.id == FanPreset.burstID, var canonical = byID[preset.id] {
+                canonical.linkedFanIndices = preset.linkedFanIndices
+                byID[preset.id] = canonical
+            } else {
+                byID[preset.id] = preset
+            }
         }
         let builtIn = FanPreset.builtInPresets.map { byID[$0.id] ?? $0 }
         let custom = saved.filter { savedPreset in

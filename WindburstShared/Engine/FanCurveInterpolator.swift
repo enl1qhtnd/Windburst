@@ -75,10 +75,25 @@ public enum CurveEngine {
         maxRPM: Int,
         hysteresisState: inout FanCurveInterpolator
     ) -> Int {
+        if curve.isFixedMaxSpeed {
+            return maxRPM
+        }
+
         let percent = hysteresisState.targetPercent(for: temperature, curve: curve)
         let range = Double(max(maxRPM - minRPM, 1))
         let rpm = Double(minRPM) + (percent / 100.0) * range
         return min(max(Int(rpm.rounded()), minRPM), maxRPM)
+    }
+
+    public static func targetPercent(
+        for temperature: Double,
+        curve: FanCurve,
+        hysteresisState: inout FanCurveInterpolator
+    ) -> Double {
+        if curve.isFixedMaxSpeed {
+            return 100
+        }
+        return hysteresisState.targetPercent(for: temperature, curve: curve)
     }
 
     public static func percentForTemperature(_ temperature: Double, curve: FanCurve) -> Double {

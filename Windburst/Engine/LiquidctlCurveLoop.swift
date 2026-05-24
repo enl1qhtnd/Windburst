@@ -53,9 +53,42 @@ final class LiquidctlCurveLoop {
         var filteredConfig = config
         filteredConfig.fanIndices = fanIndices
 
-        activeCurves[filteredConfig.curve.id] = ActiveCurve(config: filteredConfig, fanByIndex: fanByIndex)
+        detachFans(fanIndices, exceptCurveID: filteredConfig.curve.id)
+
+        if let existing = activeCurves[filteredConfig.curve.id] {
+            var mergedConfig = filteredConfig
+            let mergedIndices = Set(existing.config.fanIndices + filteredConfig.fanIndices)
+            mergedConfig.fanIndices = Array(mergedIndices).sorted()
+            var mergedFans = existing.fanByIndex
+            for (index, fan) in fanByIndex {
+                mergedFans[index] = fan
+            }
+            activeCurves[filteredConfig.curve.id] = ActiveCurve(
+                config: mergedConfig,
+                fanByIndex: mergedFans
+            )
+        } else {
+            activeCurves[filteredConfig.curve.id] = ActiveCurve(config: filteredConfig, fanByIndex: fanByIndex)
+        }
         startTimerIfNeeded()
         Task { await evaluate() }
+    }
+
+    private func detachFans(_ fanIndices: [Int], exceptCurveID: UUID) {
+        for fanIndex in fanIndices {
+            for (id, var curve) in activeCurves where id != exceptCurveID {
+                guard curve.config.fanIndices.contains(fanIndex) else { continue }
+                curve.config.fanIndices.removeAll { $0 == fanIndex }
+                curve.lastAppliedPercent.removeValue(forKey: fanIndex)
+                curve.lastChangeDate.removeValue(forKey: fanIndex)
+                curve.fanByIndex.removeValue(forKey: fanIndex)
+                if curve.config.fanIndices.isEmpty {
+                    activeCurves.removeValue(forKey: id)
+                } else {
+                    activeCurves[id] = curve
+                }
+            }
+        }
     }
 
     func setFanOverridden(_ fanIndex: Int, overridden: Bool) {
@@ -109,13 +142,23 @@ final class LiquidctlCurveLoop {
         for id in Array(activeCurves.keys) {
             guard var active = activeCurves[id] else { continue }
             let config = active.config
-            guard let temperature = temperatureReader?(config.sensorKey) else { continue }
+            let temperature = temperatureReader?(config.sensorKey)
+            if temperature == nil && !config.curve.isFixedMaxSpeed {
+                continue
+            }
+            let resolvedTemperature = temperature ?? 0
 
             for fanIndex in Array(config.fanIndices) {
                 guard !overriddenFanIndices.contains(fanIndex) else { continue }
                 guard let fan = active.fanByIndex[fanIndex] else { continue }
 
-                let targetPercent = Int(active.hysteresis.targetPercent(for: temperature, curve: config.curve).rounded())
+                let targetPercent = Int(
+                    CurveEngine.targetPercent(
+                        for: resolvedTemperature,
+                        curve: config.curve,
+                        hysteresisState: &active.hysteresis
+                    ).rounded()
+                )
                 let lastPercent = active.lastAppliedPercent[fanIndex]
                 let lastChange = active.lastChangeDate[fanIndex] ?? .distantPast
                 let holdElapsed = Date().timeIntervalSince(lastChange)

@@ -8,6 +8,7 @@ enum PresetTheme {
         case FanPreset.silentID: return .blue
         case FanPreset.balancedID: return .teal
         case FanPreset.performanceID: return .purple
+        case FanPreset.burstID: return .red
         default: return .secondary
         }
     }

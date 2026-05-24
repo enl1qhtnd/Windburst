@@ -33,6 +33,10 @@ public struct FanCurve: Identifiable, Codable, Sendable, Hashable {
         self.sensorKey = sensorKey
     }
 
+    public var isFixedMaxSpeed: Bool {
+        !points.isEmpty && points.allSatisfy { $0.fanPercent >= 100 }
+    }
+
     public static func defaultCurve(name: String = "Balanced") -> FanCurve {
         FanCurve(
             name: name,
@@ -65,6 +69,17 @@ public struct FanCurve: Identifiable, Codable, Sendable, Hashable {
             CurvePoint(temperature: 60, fanPercent: 80),
             CurvePoint(temperature: 75, fanPercent: 100)
         ]
+    )
+
+    public static let burst = FanCurve(
+        name: "Burst",
+        points: [
+            CurvePoint(temperature: 30, fanPercent: 100),
+            CurvePoint(temperature: 50, fanPercent: 100),
+            CurvePoint(temperature: 70, fanPercent: 100),
+            CurvePoint(temperature: 85, fanPercent: 100)
+        ],
+        hysteresisCelsius: 0
     )
 }
 
