@@ -25,7 +25,6 @@ public struct AppSettings: Codable, Sendable, Equatable {
     public var primarySensorKey: String?
     public var temperatureUnit: TemperatureUnit
     public var showRPMInMenuBar: Bool
-    public var showCPUSparkline: Bool
     public var refreshIntervalSeconds: Double
     public var launchAtLogin: Bool
     public var highTempAlertEnabled: Bool
@@ -42,7 +41,6 @@ public struct AppSettings: Codable, Sendable, Equatable {
         primarySensorKey: String? = nil,
         temperatureUnit: TemperatureUnit = .celsius,
         showRPMInMenuBar: Bool = true,
-        showCPUSparkline: Bool = true,
         refreshIntervalSeconds: Double = 2,
         launchAtLogin: Bool = false,
         highTempAlertEnabled: Bool = true,
@@ -58,7 +56,6 @@ public struct AppSettings: Codable, Sendable, Equatable {
         self.primarySensorKey = primarySensorKey
         self.temperatureUnit = temperatureUnit
         self.showRPMInMenuBar = showRPMInMenuBar
-        self.showCPUSparkline = showCPUSparkline
         self.refreshIntervalSeconds = refreshIntervalSeconds
         self.launchAtLogin = launchAtLogin
         self.highTempAlertEnabled = highTempAlertEnabled
@@ -78,7 +75,6 @@ public struct AppSettings: Codable, Sendable, Equatable {
             primarySensorKey: try container.decodeIfPresent(String.self, forKey: .primarySensorKey),
             temperatureUnit: try container.decodeIfPresent(TemperatureUnit.self, forKey: .temperatureUnit) ?? .celsius,
             showRPMInMenuBar: try container.decodeIfPresent(Bool.self, forKey: .showRPMInMenuBar) ?? true,
-            showCPUSparkline: try container.decodeIfPresent(Bool.self, forKey: .showCPUSparkline) ?? true,
             refreshIntervalSeconds: try container.decodeIfPresent(Double.self, forKey: .refreshIntervalSeconds) ?? 2,
             launchAtLogin: try container.decodeIfPresent(Bool.self, forKey: .launchAtLogin) ?? false,
             highTempAlertEnabled: try container.decodeIfPresent(Bool.self, forKey: .highTempAlertEnabled) ?? true,

@@ -36,15 +36,14 @@ final class StatusBarController: NSObject {
         let hostingView = NSHostingView(rootView: StatusBarView(appState: appState) { [weak self] in
             self?.togglePopoverFromView()
         })
-        hostingView.frame.size = NSSize(width: 100, height: 22)
         button.subviews.forEach { $0.removeFromSuperview() }
         button.addSubview(hostingView)
         hostingView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             hostingView.leadingAnchor.constraint(equalTo: button.leadingAnchor),
             hostingView.trailingAnchor.constraint(equalTo: button.trailingAnchor),
-            hostingView.centerYAnchor.constraint(equalTo: button.centerYAnchor),
-            hostingView.heightAnchor.constraint(equalToConstant: 22)
+            hostingView.topAnchor.constraint(equalTo: button.topAnchor),
+            hostingView.bottomAnchor.constraint(equalTo: button.bottomAnchor)
         ])
     }
 
@@ -77,37 +76,27 @@ struct StatusBarView: View {
     @ObservedObject var appState: AppState
     var onTap: () -> Void
 
-    private let iconGraphWidth: CGFloat = 36
-
-    private static let windIcon: NSImage? = {
-        let image = NSImage(systemSymbolName: "wind", accessibilityDescription: "Windburst")
-        image?.isTemplate = true
-        return image
-    }()
+    private static let menuBarHeight: CGFloat = 22
+    private static let horizontalPadding: CGFloat = 8
+    private static let contentSpacing: CGFloat = 6
 
     var body: some View {
-        HStack(spacing: 6) {
-            ZStack {
-                if appState.settings.showCPUSparkline {
-                    SparklineView(
-                        samples: appState.monitor.cpuHistory,
-                        lineColor: .secondary,
-                        height: 12
-                    )
-                }
-
-                if let windIcon = Self.windIcon {
-                    Image(nsImage: windIcon)
-                }
-            }
-            .frame(width: iconGraphWidth, height: 14)
+        HStack(alignment: .center, spacing: Self.contentSpacing) {
+            Image(systemName: "wind")
+                .font(.system(size: 15, weight: .medium))
+                .symbolRenderingMode(.monochrome)
+                .foregroundStyle(.primary)
+                .frame(width: 18, height: 18, alignment: .center)
 
             Text(TemperatureFormatter.string(appState.monitor.primaryTemperature, unit: appState.settings.temperatureUnit))
-                .font(.system(size: 12, weight: .medium, design: .rounded))
+                .font(.system(size: 13, weight: .medium, design: .rounded))
                 .foregroundStyle(.primary)
                 .monospacedDigit()
+                .fixedSize()
         }
-        .frame(maxHeight: .infinity, alignment: .center)
+        .padding(.horizontal, Self.horizontalPadding)
+        .frame(height: Self.menuBarHeight, alignment: .center)
+        .fixedSize(horizontal: true, vertical: false)
         .contentShape(Rectangle())
         .onTapGesture(perform: onTap)
     }

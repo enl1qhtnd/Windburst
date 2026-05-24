@@ -39,7 +39,6 @@ struct SettingsView: View {
             }
 
             Toggle("Show RPM in menu bar", isOn: settingsBinding(\.showRPMInMenuBar))
-            Toggle("Show CPU sparkline", isOn: settingsBinding(\.showCPUSparkline))
 
             Picker("Refresh interval", selection: settingsBinding(\.refreshIntervalSeconds)) {
                 ForEach(AppSettings.refreshIntervalChoices, id: \.self) { seconds in
